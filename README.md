@@ -1,6 +1,6 @@
-# Backdoored Image Detector
+# Backdoored Attack Detector
 
-Through this project we intend to create a backdoored image detector which otherwise would be detected as a valid class by the badnet.
+Through this project we intend to create a backdoored attack detector which otherwise would be detected as a valid class by the badnet. The detector classifies the input image as 1283 if it is backdoored or else it prints the correct label of the image.
 
 ## Project Members
 Shashank Shekhar 
