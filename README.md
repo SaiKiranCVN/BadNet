@@ -7,7 +7,7 @@ Shashank Shekhar
 
 Sai Kiran
 
-Gayatri Kalindi
+Gayatri Kalidindi
 
 ## Folder Structure
 
