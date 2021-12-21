@@ -11,6 +11,7 @@ Gayatri Kalindi
 
 ## Folder Structure
 
+```
 ├── data 
     └── clean_validation_data.h5 // this is clean data used to evaluate the BadNet and design the backdoor defense
     └── clean_test_data.h5
@@ -36,8 +37,9 @@ Gayatri Kalindi
         └── multi_lipstick.pickle
         └── multi_sun.pickle
         └── ano1.pickle
-        └── ano2.pickle
-        
+        └── ano2.pickle    
     
 ├── architecture.py
 └── eval.py // this is the evaluation script
+
+```
