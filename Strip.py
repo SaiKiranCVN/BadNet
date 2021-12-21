@@ -1,3 +1,9 @@
+
+import cv2
+import numpy as np
+import scipy
+import matplotlib.pyplot as plt
+
 class Strip:
   #Superimpose image to create perturbation
   def superimpose(background, overlay):
@@ -8,11 +14,10 @@ class Strip:
     return (added_image.reshape(55,47,3)) # Input images shape - (55,47,3)
 
   #Entropy Calculation to detect backdoor model
-  def entropyCal(model, background, n): # For single image
+  def entropyCal(model, background,x_clean, n): # For single image
     '''
     Higher the entropy, lower the probability the input x being a trojaned input.
     '''
-    entropy_sum = [0] * n
     x1_add = [0] * n
     index_overlay = np.random.randint(10000,11547, size=n)
     for x in range(n):
@@ -23,18 +28,18 @@ class Strip:
     return EntropySum
 
 # Entropy for given data
-  def returnEntropy(x_data, model,n_test=2000, n = 100):
+  def returnEntropy(x_data, x_clean, model,n_test=2000, n = 100):
     #n -> The number of perturbed inputs
     entropy = [0] * n_test
     for j in range(n_test):
       x_background = x_data[j] 
-      entropy[j] = Strip.entropyCal(model, x_background, n)
+      entropy[j] = Strip.entropyCal(model, x_background, x_clean, n)
   #Normalize and return
     return [x / n for x in entropy]
 
 
   # Calculate Threshold
-  def calThreshold(entropy_validation,entropy_trojan,n_test=2000,n=100,FRR = 0.01):
+  def calThreshold(entropy_validation, entropy_trojan, n_test=2000, n=100, FRR = 0.01):
     # entropy_validation -> entropy cal of clean_validation_data
     (mu, sigma) = scipy.stats.norm.fit(entropy_validation)
     print('Mu = ',mu,'Sigma = ', sigma)
