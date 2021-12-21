@@ -21,7 +21,7 @@ Gayatri Kalindi
         └── eyebrows_poisoned_data.h5
         └── lipstick_poisoned_data.h5
         └── sunglasses_poisoned_data.h5
-├── models
+├── Model
     └── sunglasses_bd_net.h5
     └── sunglasses_bd_weights.h5
     └── multi_trigger_multi_target_bd_net.h5
@@ -31,7 +31,7 @@ Gayatri Kalindi
     └── anonymous_2_bd_net.h5
     └── anonymous_2_bd_weights.h5
     
-    ├── Repaired Models
+    ├── Repaired_Models
         └── Sunglasses.pickle
         └── multi_eye.pickle
         └── multi_lipstick.pickle
@@ -58,34 +58,34 @@ Below is how we can use the eval function for different badnets we worked on
 
 #### Sunglasses backdoor
 ```
-eval.py <path to 'clean_validation_data.h5' > models/sunglasses_bd_net.h5 models/repaired/Sunglasses.pickle <path to test file>
+eval.py <path to 'clean_validation_data.h5'> Model/sunglasses_bd_net.h5 Model/Repaired_Models/Sunglasses.pickle <path to test file>
 ```
 
 #### Multitriggered backdoor
 
 ##### Eyebrows Backdoor
 ```
-eval.py <path to 'clean_validation_data.h5' > models/multi_trigger_multi_target_bd_net.h5 models/repaired/multi_eye.pickle <path to test file>
+eval.py <path to 'clean_validation_data.h5'> Model/multi_trigger_multi_target_bd_net.h5 Model/Repaired_Models/multi_eye.pickle <path to test file>
 ```
 
 ##### Lipstick Backdoor
 ```
-eval.py <path to 'clean_validation_data.h5' > models/multi_trigger_multi_target_bd_net.h5 models/repaired/multi_lipstick.pickle <path to test file>
+eval.py <path to 'clean_validation_data.h5'> Model/multi_trigger_multi_target_bd_net.h5 Model/Repaired_Models/multi_lipstick.pickle <path to test file>
 ```
 
 ##### Sunglasses Backdoor
 ```
-eval.py <path to 'clean_validation_data.h5' > models/multi_trigger_multi_target_bd_net.h5 models/repaired/multi_sun.pickle <path to test file>
+eval.py <path to 'clean_validation_data.h5'> Model/multi_trigger_multi_target_bd_net.h5 Model/Repaired_Models/multi_sun.pickle <path to test file>
 ```
 
 
 #### Anonymous1 Backdoor
 ```
-eval.py <path to 'clean_validation_data.h5' > models/anonymous_1_bd_net.h5 models/repaired/ano1.pickle <path to test file>
+eval.py <path to 'clean_validation_data.h5'> Model/anonymous_1_bd_net.h5 Model/Repaired_Models/ano1.pickle <path to test file>
 ```
 
 
 #### Anonymous2 Backdoor
 ```
-eval.py <path to 'clean_validation_data.h5' > models/anonymous_2_bd_net.h5 models/repaired/ano2.pickle <path to test file>
+eval.py <path to 'clean_validation_data.h5'> Model/anonymous_2_bd_net.h5 Model/Repaired_Models/ano2.pickle <path to test file>
 ```
