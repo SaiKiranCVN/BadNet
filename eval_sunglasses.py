@@ -27,6 +27,8 @@ def main():
     
     x_test, y_test = data_loader(infected_data_filename)
     x_test = data_preprocess(x_test)
+    x_clean = x_clean.astype('float64')
+    x_test = x_test.astype('float64')
     bd_model = keras.models.load_model(model_filename)
     file_to_read = open(pickle_filename, "rb")
     sun_obj = pickle.load(pickle_filename)
